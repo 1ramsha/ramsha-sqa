@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Ramsha Mukhtar &mdash; SQA</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="webestica.com">
+	<meta name="description" content="Ramsha Mukhtar &mdash; SQA">
+
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+	
+<header class="header-sticky header-absolute">
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<a class="navbar-brand me-0" href="/">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/1.png" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/1.png" alt="logo">
+			</a>
+
+			<ul class="nav align-items-center dropdown-hover ms-sm-2">
+				<li class="nav-item dropdown dropdown-animation">
+					<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme"
+					type="button"
+					aria-expanded="false"
+					data-bs-toggle="dropdown"
+					data-bs-display="static">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+						<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+						<use href="#"></use>
+					</svg>
+					</button>
+
+					<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+								<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+									<use href="#"></use>
+								</svg>Light
+							</button>
+						</li>
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+									<use href="#"></use>
+								</svg>Dark
+							</button>
+						</li>
+						<li>
+							<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+									<use href="#"></use>
+								</svg>Auto
+							</button>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item ms-2 d-none d-sm-block">
+					<a href="sign-up.html" class="btn btn-sm btn-primary-grad mb-0">Let's Connect</a>
+				</li>
+				<li class="nav-item">
+					<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+				</li>	
+			</ul>
+
+		</div>
+	</nav>
+</header>
+<main>
+
+<section class="pt-8 pb-0 overflow-hidden">
+	<div class="container" data-sticky-container>
+		<div class="row align-items-stretch">
+			<div class="col-lg-5 offset-lg-1 order-2 mb-5 mb-lg-0">
+				<div data-sticky data-margin-top="100" data-sticky-for="992">
+					<div class="position-relative h-500px h-md-750px w-lg-50vw">
+						<div class="w-100 h-500px h-md-750px rounded-4" style="background-image: url(assets/images/2.png); background-size:cover; background-position:top center;"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 order-1 mb-5 mb-lg-0">
+				<div class="pb-lg-7 pt-lg-5">
+					<h5 class="mb-lg-4"><span class="hand-wave-animate">🖐️</span> Hello, I’m</h5>
+						
+					<h1 class="display-1 position-relative mb-6 mb-sm-5">
+						Ramsha Mukhtar
+						<span class="h5 bg-primary text-white rounded-3 rotate-350 position-absolute bottom-0 end-0 mb-n5 mb-sm-n3 mb-lg-n1 px-4 py-3">
+                            SQA Engineer
+                        </span>
+					</h1>
+	
+					<p class="lead mb-4">A detail-oriented Software QA Engineer with Agile experience, test planning, bug reporting, and cross-team collaboration. I also bring 3+ years in HR coordination, blending people skills with technical accuracy to support impactful teams and products.</p>
+	
+					<a href="#" class="btn btn-secondary icon-link icon-link-hover">Work with me! <i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+
+			<div class="col-xl-6 order-3">
+				<h2 class="mb-4 mb-lg-5">My expertise</h2>
+
+				<div class="row g-4">
+					<div class="col-md-6">
+						<div class="card bg-warning bg-opacity-15 rounded-4 p-4 h-100">
+							<div class="card-header bg-transparent p-0 pb-4">
+								<div class="icon-lg bg-warning text-white rounded-circle">
+									<i class="bi bi-pc-display fa-lg"></i>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<h6>Software Quality Assurance</h6>
+								<p class="mb-3">Manual testing, test case creation, bug reporting, and regression checks in Agile workflows.</p>
+							</div>
+							<div class="card-footer bg-transparent p-0">
+								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="card bg-pink bg-opacity-15 rounded-4 p-4 h-100">
+							<div class="card-header bg-transparent p-0 pb-4">
+								<div class="icon-lg bg-pink text-white rounded-circle">
+									<i class="bi bi-vector-pen fa-lg"></i>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<h6>Agile Team Collaboration</h6>
+								<p class="mb-3">Daily standups, sprint planning, and JIRA reporting for tight QA-development alignment.</p>
+							</div>
+							<div class="card-footer bg-transparent p-0">
+								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="card bg-info bg-opacity-15 rounded-4 p-4 h-100">
+							<div class="card-header bg-transparent p-0 pb-4">
+								<div class="icon-lg bg-info text-white rounded-circle">
+									<i class="bi bi-globe2 fa-lg"></i>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<h6>HR & Talent Coordination</h6>
+								<p class="mb-3">Recruitment, onboarding, and HR tech tools like Bitrix24, LinkedIn hiring, and compliance tracking.</p>
+							</div>
+							<div class="card-footer bg-transparent p-0">
+								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="card bg-success bg-opacity-15 rounded-4 p-4 h-100">
+							<div class="card-header bg-transparent p-0 pb-4">
+								<div class="icon-lg bg-success text-white rounded-circle">
+									<i class="bi bi-cart-check fa-lg"></i>
+								</div>
+							</div>
+							<div class="card-body p-0">
+								<h6>Communication & Reporting</h6>
+								<p class="mb-3">Clear documentation, bug traceability, test reporting, and stakeholder communication.</p>
+							</div>
+							<div class="card-footer bg-transparent p-0">
+								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div> 
+	</div>
+</section>
+
+<!-- No changes made to the Project Cards section – keep them or update image titles if needed -->
+
+<section class="position-relative z-index-2 pt-10">
+	<div class="container-fluid position-relative">
+		<div class="max-width-1550 bg-secondary bg-opacity-50 position-relative rounded-4 overflow-hidden px-3 py-4 py-sm-6 py-lg-8">
+			<div class="position-absolute top-0 end-0 mt-n6">
+				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="rotate-270 blur-8 opacity-2" alt="Grad shape">
+			</div>
+			
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-lg-7">
+						<span class="text-primary-grad fw-semibold">About me</span>
+						<h2 class="my-3">From HR to QA — My journey into tech</h2>
+						<p class="mb-4">I started in HR, managing recruitment and team engagement across multiple cities. As I transitioned into software testing, I found my passion in QA processes, Agile teams, and structured problem-solving. Now I bring value at the intersection of people, systems, and quality.</p>
+
+						<ul class="list-inline d-flex flex-wrap gap-2 align-items-center mb-0">
+							<li class="list-inline-item heading-color fw-semibold me-sm-3">Follow me on:</li>
+							<li class="list-inline-item"> <a class="btn btn-sm bg-facebook mb-0" href="#"><i class="bi bi-facebook lh-base"></i> Facebook</a> </li>
+							<li class="list-inline-item"> <a class="btn btn-sm bg-instagram-gradient mb-0" href="#"><i class="bi bi-instagram lh-base"></i> Instagram</a> </li>
+							<li class="list-inline-item"> <a class="btn btn-sm bg-twitter-x mb-0" href="#"><i class="bi bi-twitter-x lh-base"></i> Twitter</a> </li>
+							<li class="list-inline-item"> <a class="btn btn-sm bg-linkedin mb-0" href="#"><i class="bi bi-linkedin lh-base"></i> Linkedin</a> </li>
+						</ul>
+					</div>
+
+					<div class="col-lg-4 ms-auto">
+						<div class="row">
+							<div class="col-12 border-bottom border-primary border-opacity-25 mb-3">
+								<div class="d-flex mb-2">
+									<h4 class="purecounter display-4 mb-0" data-purecounter-start="0" data-purecounter-end="4"	data-purecounter-delay="300">0</h4>
+									<span class="display-4 text-primary mb-0">+</span>
+								</div>
+								<p class="lead heading-color pb-3">Years of total experience</p>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="d-flex mb-2">
+									<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="68"	data-purecounter-delay="300">0</h4>
+									<span class="h2 mb-0">+</span>
+								</div>
+								<p class="heading-color">Successful projects</p>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="d-flex mb-2">
+									<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="105"	data-purecounter-delay="300">0</h4>
+									<span class="h2 mb-0">+</span>
+								</div>
+								<p class="heading-color">Satisfied clients & teams</p>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="pt-10">
+	<div class="container">
+		<div class="row g-4">
+			<div class="col-lg-6 pe-lg-5">
+				<img src="assets/images/3.jpg" class="rounded-4" alt="portfolio-img">
+			</div>
+
+			<div class="col-lg-6">
+				<h2 class="mb-4">
+                    Say Hi
+                    <br>
+                    <span class="text-primary-grad fw-semibold">Let's build something amazing together!</span>
+                </h2>
+
+                <p class="mb-4">I'm always open to new opportunities in QA or HR-tech roles. Whether you have a project, a role, or just want to connect — feel free to say hello!</p>
+                
+				<div class="d-sm-flex gap-5 mt-5">
+					<div class="d-flex gap-2 mb-4">
+						<div class="heading-color lead"><i class="bi bi-telephone"></i></div>
+						<div>
+							<p class="heading-color fw-semibold mb-0">Call me:</p>
+							<ul class="list-group list-group-borderless mb-0">
+								<li class="list-group-item pb-0"> <a href="#" class="text-primary-hover">+(39) 347-275-4488</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="d-flex gap-2 mb-4">
+						<div class="heading-color lead"><i class="bi bi-envelope"></i></div>
+						<div>
+							<p class="heading-color fw-semibold mb-0">E-mail:</p>
+							<ul class="list-group list-group-borderless mb-0">
+								<li class="list-group-item pb-0"> <a href="mailto:ramshamukhtar96@gmail.com" class="text-primary-hover">ramshamukhtar96@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+
+
+<footer class="bg-pink--- pt-6 pt-md-8 position-relative" data-bs-theme="dark" style="background-color: #fff;">
+	<div class="container">
+		<div class="row g-4 justify-content-between">
+			<div class="col-lg-4">
+				<a href="index.html">
+					<img class="h-60px" src="assets/images/1.png" alt="logo">
+				</a>
+
+				<p class="my-3 my-lg-4">
+                    A detail-oriented Software QA Engineer with Agile experience, test planning, bug reporting, and cross-team collaboration. I also bring 3+ years in HR coordination, blending people skills with technical accuracy to support impactful teams and products.
+                </p>
+		
+			</div>
+	
+		</div>
+
+		<hr class="mt-xl-5 mb-0 opacity-1">
+
+		<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+			<div class="text-body small mb-3 mb-md-0"> Copyrights ©2024 Folio. Build by <a href="https://www.webestica.com/" target="_blank" class="text-body text-primary-hover hover-underline-animation">Webestica</a>. </div>
+		</div>
+	</div>
+</footer>
+
+<div class="back-top"></div>
+
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Vendors-->
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="assets/vendor/sticky-js/sticky.min.js"></script>
+
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>

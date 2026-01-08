@@ -1,399 +1,778 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
 <head>
-	
-	<title>Ramsha Mukhtar &mdash; SQA</title>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
+    <title>Ramsha Mukhtar - Junior QA Engineer Portfolio</title>
+    <meta name="description"
+        content="Junior Software Quality Assurance Engineer specializing in manual testing, API validation, and Agile QA processes. Based in Bolzano, Italy.">
+    <meta name="keywords"
+        content="Ramsha Mukhtar, QA Engineer, Software Quality Assurance, Manual Testing, API Testing, JIRA, Postman, Agile, Test Automation, Bug Tracking, Bolzano Italy">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="webestica.com">
-	<meta name="description" content="Ramsha Mukhtar &mdash; SQA">
+    <meta name="author" content="Ramsha Mukhtar">
 
-	<script>
-		const storedTheme = localStorage.getItem('theme')
- 
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
-		}
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/odometer.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-		setTheme(getPreferredTheme())
+    <!-- Font -->
+    <link rel="stylesheet" href="font/fonts.css">
 
-		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
-				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="icons/icomoon/style.css">
 
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
-					})
-				})
-
-			}
-		})
-		
-	</script>
-
-	<link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
-
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="images/favicon.svg">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.svg">
 </head>
 
 <body>
-	
-<header class="header-sticky header-absolute">
-	<nav class="navbar navbar-expand-xl">
-		<div class="container">
-			<a class="navbar-brand me-0" href="/">
-				<img class="light-mode-item navbar-brand-item" src="assets/images/1.png" alt="logo">
-				<img class="dark-mode-item navbar-brand-item" src="assets/images/1.png" alt="logo">
-			</a>
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
 
-			<ul class="nav align-items-center dropdown-hover ms-sm-2">
-				<li class="nav-item dropdown dropdown-animation">
-					<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme"
-					type="button"
-					aria-expanded="false"
-					data-bs-toggle="dropdown"
-					data-bs-display="static">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
-						<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-						<use href="#"></use>
-					</svg>
-					</button>
+    <!-- wrapper -->
+    <div id="wrapper" class="bg-color-secondary counter-scroll">
 
-					<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
-						<li class="mb-1">
-							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
-								<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
-									<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-									<use href="#"></use>
-								</svg>Light
-							</button>
-						</li>
-						<li class="mb-1">
-							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
-								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
-									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-									<use href="#"></use>
-								</svg>Dark
-							</button>
-						</li>
-						<li>
-							<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
-								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
-									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-									<use href="#"></use>
-								</svg>Auto
-							</button>
-						</li>
-					</ul>
-				</li>
+        <!-- header -->
+        <Header class="header-2 header-fixed">
+            <div class="container-2 d-flex justify-content-between">
+                <div class="header-left logo">
+                    <a href="#" class="text-white">
+                        <img src="images/logo/logo-2.png" alt="">
+                    </a>
+                </div>
+                <div class="header-right d-flex gap_8">
+                    <div class="tag-title  d-inline-flex align-items-center gap_8 md-hide">
+                        <span class="point"></span>
+                        <p class="text-body-2 text_white">Open to opportunities</p>
+                    </div>
+                    <a href="#" class="link-no-action side-toggle  link-no-action">
+                        <div class="icon">
+                            <span class="top"></span>
+                            <span class="middle"></span>
+                            <span class="bottom"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </Header>
+        <!-- /header -->
 
-				<li class="nav-item ms-2 d-none d-sm-block">
-					<a href="sign-up.html" class="btn btn-sm btn-primary-grad mb-0">Let's Connect</a>
-				</li>
-				<li class="nav-item">
-					<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-animation">
-							<span></span>
-							<span></span>
-							<span></span>
-						</span>
-					</button>
-				</li>	
-			</ul>
+        <!-- header -->
+        <div class="page-title">
+            <div class="tf-container">
+                <div class="hero-banner">
+                    <div class="image">
+                        <div class="row">
+                            <div class="col-md-6 mx-auto tf-animate-1">
+                                <img loading="lazy" width="695" height="854" src="images/hero/hero-4.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-wrap">
+                        <div class="content">
+                            <div class="hero-title text_white split-text split-lines-rotation-x">
+                                I'm Ramsha <br>
+                                Mukhtar
+                                <div class="item text-button d-none d-sm-flex animateFade" data-fade-from="right"
+                                    data-delay="1">
+                                    Open to opportunities
+                                </div>
+                            </div>
+                            <p class="desc font2 split-text split-lines-transform   ">
+                                Seeking opportunities in dynamic, growth-oriented organizations where I can apply my academic knowledge and passion for Software Quality Assurance. Eager to take on diverse responsibilities, contribute to product quality, and enhance my professional skills while gaining hands-on experience in test automation alongside manual QA.
+                            </p>
+                            <a href="#" class="tf-btn btn-bg-primary btn-hover-animation-fill animateFade">
+                                <span>
+                                    <i class="icon-ArrowRight arr-1"></i>
+                                    <span class="btn-text h5 text_secondary-color">Hire Me</span>
+                                    <i class="icon-ArrowRight arr-2"></i>
+                                </span>
+                                <span class="bg-effect"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="content-wrap-2">
+                        <div class="box-title-2">
+                            <div class="hero-title-2 text-clip split-text split-lines-rotation-x">
+                                QA <br>
+                                Engineer
+                            </div>
+                            <p class="sub text-white   split-text split-lines-transform">
+                                Based in Bolzano, Italy
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn_wrapper animateFade">
+                        <a href="#project" class="btn-view-all md-hide btn-item btn-hover btn-hover-animation-fill">
+                            <span class="text h5 text-center">
+                                View all <br>
+                                PROJECT
+                            </span>
+                            <i class="icon icon-ArrowDown"></i>
+                            <span class="bg-effect"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-partner-infinity ">
+                <div class="wrap-marquee bg-primary-color marquee-1">
+                    <div class="infiniteslide " data-clone="2" data-style="left">
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">© Ramsha Mukhtar</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text-border-2">QA Engineer</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">2025 portfolio</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">© Ramsha Mukhtar</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text-border-2">QA Engineer</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">2025 portfolio</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">© Ramsha Mukhtar</h1>
+                        </div>
+                        <div class="marquee-item ">
+                            <h1 class="text-border-2">QA Engineer</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">2025 portfolio</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-marquee bg-white-color marquee-2">
+                    <div class="infiniteslide " data-clone="2" data-style="right">
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">© Ramsha Mukhtar</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text-border-2">QA Engineer</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">2025 portfolio</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">© Ramsha Mukhtar</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text-border-2">QA Engineer</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">2025 portfolio</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">© Ramsha Mukhtar</h1>
+                        </div>
+                        <div class="marquee-item ">
+                            <h1 class="text-border-2">QA Engineer</h1>
+                        </div>
+                        <div class="marquee-item">
+                            <h1 class="text_secondary-color">2025 portfolio</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header -->
 
-		</div>
-	</nav>
-</header>
-<main>
+        <!-- main-content -->
+        <div class="main-content section-onepage">
 
-<section class="pt-8 pb-0 overflow-hidden">
-	<div class="container" data-sticky-container>
-		<div class="row align-items-stretch">
-			<div class="col-lg-5 offset-lg-1 order-2 mb-5 mb-lg-0">
-				<div data-sticky data-margin-top="100" data-sticky-for="992">
-					<div class="position-relative h-500px h-md-750px w-lg-50vw">
-						<div class="w-100 h-500px h-md-750px rounded-4" style="background-image: url(assets/images/2.png); background-size:cover; background-position:top center;"></div>
-					</div>
-				</div>
-			</div>
+            <!-- section-about -->
+            <div id="about" class="section-about-2 section">
+                <div class="tf-container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="heading-title-2">
+                                <div class="d-flex align-items-center gap_7">
+                                    <div class="text-title text_white text-uppercase">about me</div>
+                                    <i class="icon-ArrowUpRight"></i>
+                                </div>
+                                <div class="cycle-line"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="scroll-effect mb_35">
+                                <h3 class="text-change-color reveal-type">As a Junior Software Quality Assurance Engineer, I bring hands-on experience in manual testing, API validation, and Agile methodologies. I'm dedicated to ensuring product reliability through comprehensive testing strategies and delivering exceptional user experiences across web and mobile platforms.</h3>
+                            </div>
+                            <div>
+                                <p class="text_white text-uppercase">Junior Software Quality Assurance</p>
+                                <p class="text_white text-uppercase">Engineer Based in Italy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-xxl-10">
+                            <div class="box-about">
+                                <div class="thumbs scale-img">
+                                    <img loading="lazy" decoding="async" width="325" height="436"
+                                        src="images/section/about-2.jpg" alt="about">
+                                </div>
+                                <div class="content">
+                                    <p class="font2 desc">I specialize in conducting thorough manual testing across web and mobile platforms, validating REST APIs using tools like Postman, and creating detailed test documentation. My approach combines structured test case matrices with collaborative Agile workflows to maintain traceability and quality benchmarks throughout the SDLC.</p>
+                                    <div class="line">
+                                        <img src="images/section/line.png" alt="line">
+                                    </div>
+                                    <div class="wrap-couter d-flex">
+                                        <div class="counter-item style-3 counter-1">
+                                            <div class="counter text-display-2"><span class="numberCount" data-count="100"
+                                                    data-duration="500">0</span><span class="sub-counter">%</span></div>
+                                            <p class="sub-title text_white text-uppercase">Test <br> Coverage
+                                            </p>
+                                        </div>
+                                        <div class="counter-item style-3 counter-2">
+                                            <div class="counter text-display-2"><span class="numberCount" data-count="50"
+                                                    data-duration="500">0</span><span class="sub-counter">+</span></div>
+                                            <p class="sub-title text_white text-uppercase">Test Cases <br>
+                                                Created</p>
+                                        </div>
+                                        <div class="counter-item style-3 counter-3">
+                                            <div class="counter text-display-2"><span class="numberCount" data-count="200"
+                                                    data-duration="500">10</span><span class="sub-counter">+</span>
+                                            </div>
+                                            <p class="sub-title text_white text-uppercase">Bugs Identified <br>
+                                                & Resolved</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /section-about -->
 
-			<div class="col-lg-6 order-1 mb-5 mb-lg-0">
-				<div class="pb-lg-7 pt-lg-5">
-					<h5 class="mb-lg-4"><span class="hand-wave-animate">🖐️</span> Hello, I’m</h5>
-						
-					<h1 class="display-1 position-relative mb-6 mb-sm-5">
-						Ramsha Mukhtar
-						<span class="h5 bg-primary text-white rounded-3 rotate-350 position-absolute bottom-0 end-0 mb-n5 mb-sm-n3 mb-lg-n1 px-4 py-3">
-                            SQA Engineer
-                        </span>
-					</h1>
-	
-					<p class="lead mb-4">A detail-oriented Software QA Engineer with Agile experience, test planning, bug reporting, and cross-team collaboration. I also bring 3+ years in HR coordination, blending people skills with technical accuracy to support impactful teams and products.</p>
-	
-					<a href="#" class="btn btn-secondary icon-link icon-link-hover">Work with me! <i class="bi bi-arrow-right"></i></a>
-				</div>
-			</div>
+            <!-- banner-image -->
+            <!-- <div class="banner-image tf-spacing-4  container-3 ">
+                <div class="parallaxie parallax-img" style='background: url("images/section/banner-1.jpg")'>
+                </div>
+            </div> -->
+            <!-- /banner-image -->
 
-			<div class="col-xl-6 order-3">
-				<h2 class="mb-4 mb-lg-5">My expertise</h2>
+            <!-- section-services -->
+            <div id="service" class="section-services section">
+                <div class="tf-container">
+                    <div class="heading-title-2 has-border mb_80">
+                        <div class="d-flex align-items-center gap_10 text-uppercase">
+                            <div class="text-title text_white">QA Experience </div>
+                            <i class="icon-ArrowUpRight"></i>
+                        </div>
+                        <div class="cycle-line"></div>
+                    </div>
+                    <div class="wrap-services">
+                        <div class="service-item wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                            data-wow-delay="0s">
+                            <div class="box-left">
+                                <div class="heading">
+                                    <a href="#" class="h1 link text_white">Manual Testing & QA</a>
+                                    <ul class="category">
+                                        <li><a href="#" class="text-caption-1 text_white">Web Application</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Mobile Apps</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Cross-Browser Testing</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">UI/UX Validation</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrapper">
+                                    <a href="#" class="tf-btn-2 btn-item btn-hover">
+                                        <span class="h5">View
+                                            SERVICES</span>
+                                        <i class="icon-ArrowUpRight"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="box-right">
+                                <div class="number">SQA</div>
+                                <div class="img-style scale-img">
+                                    <img loading="lazy" decoding="async" src="images/section/service-1.jpg" width="448"
+                                        height="490" alt="service">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-item wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                            data-wow-delay="0s">
+                            <div class="box-left">
+                                <div class="heading">
+                                    <a href="#" class="h1 link text_white">API Testing & Validation</a>
+                                    <ul class="category">
+                                        <li><a href="#" class="text-caption-1 text_white">REST APIs</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Postman Testing</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Integration Testing</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Data Validation</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrapper">
+                                    <a href="#" class="tf-btn-2 btn-item btn-hover">
+                                        <span class="h5">API</span>
+                                        <i class="icon-ArrowUpRight"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="box-right">
+                                <div class="number">02</div>
+                                <div class="img-style scale-img">
+                                    <img loading="lazy" decoding="async" src="images/section/service-2.jpg" width="448"
+                                        height="490" alt="service">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-item wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                            data-wow-delay="0s">
+                            <div class="box-left">
+                                <div class="heading">
+                                    <a href="#" class="h1 link text_white">Agile QA & Documentation</a>
+                                    <ul class="category">
+                                        <li><a href="#" class="text-caption-1 text_white">Test Cases</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Test Plans</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">JIRA & Confluence</a></li>
+                                        <li><a href="#" class="text-caption-1 text_white">Bug Reports</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrapper">
+                                    <a href="#" class="tf-btn-2 btn-item btn-hover">
+                                        <span class="h5">Agile</span>
+                                        <i class="icon-ArrowUpRight"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="box-right">
+                                <div class="number">03</div>
+                                <div class="img-style scale-img">
+                                    <img loading="lazy" decoding="async" src="images/section/service-3.jpg" width="448"
+                                        height="490" alt="service">
+                                </div>
+                            </div>
+                        </div>
 
-				<div class="row g-4">
-					<div class="col-md-6">
-						<div class="card bg-warning bg-opacity-15 rounded-4 p-4 h-100">
-							<div class="card-header bg-transparent p-0 pb-4">
-								<div class="icon-lg bg-warning text-white rounded-circle">
-									<i class="bi bi-pc-display fa-lg"></i>
-								</div>
-							</div>
-							<div class="card-body p-0">
-								<h6>Software Quality Assurance</h6>
-								<p class="mb-3">Manual testing, test case creation, bug reporting, and regression checks in Agile workflows.</p>
-							</div>
-							<div class="card-footer bg-transparent p-0">
-								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /section-services -->
 
-					<div class="col-md-6">
-						<div class="card bg-pink bg-opacity-15 rounded-4 p-4 h-100">
-							<div class="card-header bg-transparent p-0 pb-4">
-								<div class="icon-lg bg-pink text-white rounded-circle">
-									<i class="bi bi-vector-pen fa-lg"></i>
-								</div>
-							</div>
-							<div class="card-body p-0">
-								<h6>Agile Team Collaboration</h6>
-								<p class="mb-3">Daily standups, sprint planning, and JIRA reporting for tight QA-development alignment.</p>
-							</div>
-							<div class="card-footer bg-transparent p-0">
-								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
+            <!-- section-project -->
+            <div id="project" class="section-project tf-spacing-4">
+                <div class="tf-container ">
+                    <div class="heading-title-2 mb_80">
+                        <div class="d-flex align-items-center gap_7">
+                            <div class="text-title text_white text-uppercase">QA Projects</div>
+                            <i class="icon-ArrowUpRight"></i>
+                        </div>
+                        <div class="cycle-line"></div>
+                    </div>
+                </div>
+                <div class="container-3">
+                    <div class="tf-grid-layout md-col-2 gap_16">
+                        <div class="project-item">
+                            <div class="img-style scale-img">
+                                <img src="images/section/project-1.jpg" width="896" height="820" alt="project">
+                            </div>
+                            <div class="content">
+                                <a href="https://eden.pm/" class="h3 text_white mb_7 link">Eden PM - Product Management Platform</a>
+                                <ul class="list">
+                                    <li class="text-caption-1 text-uppercase">Manual Exploratory Testing</li>
+                                    <li class="text-caption-1">2024</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="content">
+                                <a href="https://www.eventlify.com/" class="h3 text_white mb_7 link">Eventlify - Event Management QA</a>
+                                <ul class="list">
+                                    <li class="text-caption-1 text-uppercase">End-to-End Testing</li>
+                                    <li class="text-caption-1">2024</li>
+                                </ul>
+                            </div>
+                            <div class="img-style scale-img">
+                                <img src="images/section/project-2.jpg" width="896" height="820" alt="project">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /section-project -->
 
-					<div class="col-md-6">
-						<div class="card bg-info bg-opacity-15 rounded-4 p-4 h-100">
-							<div class="card-header bg-transparent p-0 pb-4">
-								<div class="icon-lg bg-info text-white rounded-circle">
-									<i class="bi bi-globe2 fa-lg"></i>
-								</div>
-							</div>
-							<div class="card-body p-0">
-								<h6>HR & Talent Coordination</h6>
-								<p class="mb-3">Recruitment, onboarding, and HR tech tools like Bitrix24, LinkedIn hiring, and compliance tracking.</p>
-							</div>
-							<div class="card-footer bg-transparent p-0">
-								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
+            <!-- wrap-banner -->
+            <div class="wrap-banner">
+                <div class="wrap-infiniteslide mb_17">
+                    <div class="infiniteslide " data-clone="2" data-style="left">
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-1.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text_white">200+ Bugs Identified & Resolved</div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text-border">50+ Test Cases Created</div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-3.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text_white">100% Test Coverage Achieved</div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-4.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text-border">6+ Months Professional QA Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-infiniteslide">
+                    <div class="infiniteslide " data-clone="2" data-style="right">
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-1.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text_white">200+ Bugs Identified & Resolved</div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-2.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text-border">50+ Test Cases Created</div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-3.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text_white">100% Test Coverage Achieved</div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="icon">
+                                <img src="images/logo/item-4.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="marquee-item ">
+                            <div class="text text-border">6+ Months Professional QA Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /wrap-banner -->
 
-					<div class="col-md-6">
-						<div class="card bg-success bg-opacity-15 rounded-4 p-4 h-100">
-							<div class="card-header bg-transparent p-0 pb-4">
-								<div class="icon-lg bg-success text-white rounded-circle">
-									<i class="bi bi-cart-check fa-lg"></i>
-								</div>
-							</div>
-							<div class="card-body p-0">
-								<h6>Communication & Reporting</h6>
-								<p class="mb-3">Clear documentation, bug traceability, test reporting, and stakeholder communication.</p>
-							</div>
-							<div class="card-footer bg-transparent p-0">
-								<a href="#" class="link-primary-grad icon-link icon-link-hover">View projects <i class="bi bi-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div> 
-			</div>
-		</div> 
-	</div>
-</section>
+            <!-- section-portfoli -->
+            <div id="work" class="section-portfoli-1 tf-spacing-5 section">
+                <div class="tf-container">
+                    <div class="wrap-portfolio">
+                        <div class="portfolio-item style-2">
+                            <a href="https://eden.pm/" class="img-style scale-img">
+                                <img src="images/portfolio/portfolio-9.jpg" width="696" height="688" alt="portfolio">
+                            </a>
+                            <div class="content">
+                                <a href="https://eden.pm/" class="mb_16 title link">Eden PM - Product Management Testing</a>
+                                <ul class="category">
+                                    <li><a href="#" class="text-caption-1 text_white">Manual Testing</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Test Cases</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Bug Tracking</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Regression Testing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-item style-2">
+                            <a href="https://www.eventlify.com/" class="img-style scale-img">
+                                <img src="images/portfolio/portfolio-11.jpg" width="696" height="457" alt="portfolio">
+                            </a>
+                            <div class="content">
+                                <a href="https://www.eventlify.com/" class="mb_16 title link">Eventlify - Event Platform QA</a>
+                                <ul class="category">
+                                    <li><a href="#" class="text-caption-1 text_white">End-to-End Testing</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">UI Validation</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Cross-Browser</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Bug Reporting</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-item style-2">
+                            <a href="#" class="img-style scale-img">
+                                <img src="images/portfolio/portfolio-13.jpg" width="696" height="867" alt="portfolio">
+                            </a>
+                            <div class="content">
+                                <a href="#" class="mb_16 title link">API Testing & Validation</a>
+                                <ul class="category">
+                                    <li><a href="#" class="text-caption-1 text_white">REST APIs</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Postman</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Response Validation</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Integration Testing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-item style-2">
+                            <a href="#" class="img-style scale-img">
+                                <img src="images/portfolio/portfolio-10.jpg" width="696" height="867" alt="portfolio">
+                            </a>
+                            <div class="content">
+                                <a href="#" class="mb_16 title link">Test Case Documentation</a>
+                                <ul class="category">
+                                    <li><a href="#" class="text-caption-1 text_white">Test Plans</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Test Matrices</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Documentation</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Traceability</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-item style-2">
+                            <a href="#" class="img-style scale-img">
+                                <img src="images/portfolio/portfolio-12.jpg" width="696" height="688" alt="portfolio">
+                            </a>
+                            <div class="content">
+                                <a href="#" class="mb_16 title link">JIRA Bug Tracking</a>
+                                <ul class="category">
+                                    <li><a href="#" class="text-caption-1 text_white">Bug Reports</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">JIRA Management</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Issue Tracking</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Agile QA</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portfolio-item style-2">
+                            <a href="#" class="img-style scale-img">
+                                <img src="images/portfolio/portfolio-14.jpg" width="696" height="457" alt="portfolio">
+                            </a>
+                            <div class="content">
+                                <a href="#" class="mb_16 title link">Cross-Browser & Mobile Testing</a>
+                                <ul class="category">
+                                    <li><a href="#" class="text-caption-1 text_white">Mobile Apps</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Cross-Browser</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Responsive Testing</a></li>
+                                    <li><a href="#" class="text-caption-1 text_white">Compatibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /section-portfoli -->
 
-<!-- No changes made to the Project Cards section – keep them or update image titles if needed -->
+            <!-- wrap-banner -->
+            <div class="wrap-banner-2">
+                <div class="wrap-infiniteslide">
+                    <div class="infiniteslide " data-clone="2" data-style="left">
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-1.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-2.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-3.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-4.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-5.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-6.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-7.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-8.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-9.png" alt="partner">
+                        </div>
+                        <div class="marquee-item ">
+                            <img src="images/logo/partner-10.png" alt="partner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /wrap-banner -->
 
-<section class="position-relative z-index-2 pt-10">
-	<div class="container-fluid position-relative">
-		<div class="max-width-1550 bg-secondary bg-opacity-50 position-relative rounded-4 overflow-hidden px-3 py-4 py-sm-6 py-lg-8">
-			<div class="position-absolute top-0 end-0 mt-n6">
-				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="rotate-270 blur-8 opacity-2" alt="Grad shape">
-			</div>
-			
-			<div class="container">
-				<div class="row g-4">
-					<div class="col-lg-7">
-						<span class="text-primary-grad fw-semibold">About me</span>
-						<h2 class="my-3">From HR to QA — My journey into tech</h2>
-						<p class="mb-4">I started in HR, managing recruitment and team engagement across multiple cities. As I transitioned into software testing, I found my passion in QA processes, Agile teams, and structured problem-solving. Now I bring value at the intersection of people, systems, and quality.</p>
+        </div>
+        <!-- /main-content -->
 
-						<ul class="list-inline d-flex flex-wrap gap-2 align-items-center mb-0">
-							<li class="list-inline-item heading-color fw-semibold me-sm-3">Follow me on:</li>
-							<li class="list-inline-item"> <a class="btn btn-sm bg-facebook mb-0" href="#"><i class="bi bi-facebook lh-base"></i> Facebook</a> </li>
-							<li class="list-inline-item"> <a class="btn btn-sm bg-instagram-gradient mb-0" href="#"><i class="bi bi-instagram lh-base"></i> Instagram</a> </li>
-							<li class="list-inline-item"> <a class="btn btn-sm bg-twitter-x mb-0" href="#"><i class="bi bi-twitter-x lh-base"></i> Twitter</a> </li>
-							<li class="list-inline-item"> <a class="btn btn-sm bg-linkedin mb-0" href="#"><i class="bi bi-linkedin lh-base"></i> Linkedin</a> </li>
-						</ul>
-					</div>
+        <!-- footer -->
+        <div class="footer style-2">
+            <div class="footer-body">
+                <div class="tf-container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-tes">
+                            <div class="tes-footer">
+                                <h6 class="desc">" I deliver thorough quality assurance through comprehensive testing strategies, ensuring product reliability and exceptional user experiences across web and mobile platforms. "</h6>
+                                <div class="author d-flex align-items-center gap_16">
+                                    <div class="avatar">
+                                        <img src="images/avatar/avatar-7.png" width="64" height="64" alt="avatar">
+                                    </div>
+                                    <div class="info">
+                                        <h6 class="name text_white mb_2">Ramsha Mukhtar</h6>
+                                        <div class="text-title font2 text-color-1">QA Engineer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-contact">
+                            <div class="footer-contact">
+                                <div class="item mb_32">
+                                    <p class="font2 mb_12">Please send me an email to</p>
+                                    <a href="mailto:ramshamukhtar96@gmail.com" class="h4 link text_white hover-underline-link">ramshamukhtar96@gmail.com</a>
+                                </div>
+                                <div class="item">
+                                    <p class="font2 mb_12">Let's talk!</p>
+                                    <a href="tel:+393472754488" class="h4 link text_white ">(+39) 3472754488</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-social">
+                            <div class="footer-social">
+                                <div class="wrap-quick-link">
+                                    <div class="text-title font2 text-color-1 mb_12">Quick link</div>
+                                    <ul class="d-grid gap_5">
+                                        <li><a href="#about" class="text-title text_white link hover-line-text">About
+                                                Me</a>
+                                        </li>
+                                        <li><a href="#service" class="text-title text_white link hover-line-text">QA
+                                                Services</a></li>
+                                        <li><a href="#project" class="text-title text_white link hover-line-text">
+                                                Projects
+                                            </a>
+                                        </li>
+                                        <li><a href="#work" class="text-title text_white link hover-line-text">
+                                                Portfolio</a>
+                                        </li>
+                                        <li><a href="https://1ramsha.github.io/ramsha-sqa/" class="text-title text_white link hover-line-text">Resume Website</a></li>
+                                    </ul>
+                                </div>
+                                <div class="wrap-social">
+                                    <div class="text-title font2 text-color-1 mb_12">Social</div>
+                                    <ul class="tf-social">
+                                        <li><a href="#" class="icon-Dribbble"></a></li>
+                                        <li><a href="#" class="icon-Behance"></a></li>
+                                        <li><a href="#" class="icon-Instagram"></a></li>
+                                        <li><a href="#" class="icon-FaceBook"></a></li>
+                                        <li><a href="#" class="icon-X"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="tf-container">
+                    <div class="mb_30 wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                        data-wow-delay="0s">
+                        <img src="images/section/footer.png" alt="footer">
+                    </div>
+                    <div class="bot d-flex justify-content-between align-items-center">
+                        <p class="font2 text_white wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                            data-wow-delay="0s">© 2025 Ramsha Mukhtar. All rights reserved.</p>
+                        <span class="line"></span>
+                        <p class="font2 text_white wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                            data-wow-delay="0.2s">2025 Portfolio - QA Engineer</p>
+                        <span class="line"></span>
+                        <p class="font2 text_white wow animate__animated animate__fadeInUp" data-wow-duration="2s"
+                            data-wow-delay="0.4s">Created by <a href="#" class="link">ramshamukhtar</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /footer -->
 
-					<div class="col-lg-4 ms-auto">
-						<div class="row">
-							<div class="col-12 border-bottom border-primary border-opacity-25 mb-3">
-								<div class="d-flex mb-2">
-									<h4 class="purecounter display-4 mb-0" data-purecounter-start="0" data-purecounter-end="4"	data-purecounter-delay="300">0</h4>
-									<span class="display-4 text-primary mb-0">+</span>
-								</div>
-								<p class="lead heading-color pb-3">Years of total experience</p>
-							</div>
+    </div>
+    <!-- /wrapper -->
 
-							<div class="col-sm-6">
-								<div class="d-flex mb-2">
-									<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="68"	data-purecounter-delay="300">0</h4>
-									<span class="h2 mb-0">+</span>
-								</div>
-								<p class="heading-color">Successful projects</p>
-							</div>
-
-							<div class="col-sm-6">
-								<div class="d-flex mb-2">
-									<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="105"	data-purecounter-delay="300">0</h4>
-									<span class="h2 mb-0">+</span>
-								</div>
-								<p class="heading-color">Satisfied clients & teams</p>
-							</div>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="pt-10">
-	<div class="container">
-		<div class="row g-4">
-			<div class="col-lg-6 pe-lg-5">
-				<img src="assets/images/3.jpg" class="rounded-4" alt="portfolio-img">
-			</div>
-
-			<div class="col-lg-6">
-				<h2 class="mb-4">
-                    Say Hi
-                    <br>
-                    <span class="text-primary-grad fw-semibold">Let's build something amazing together!</span>
-                </h2>
-
-                <p class="mb-4">I'm always open to new opportunities in QA or HR-tech roles. Whether you have a project, a role, or just want to connect — feel free to say hello!</p>
-                
-				<div class="d-sm-flex gap-5 mt-5">
-					<div class="d-flex gap-2 mb-4">
-						<div class="heading-color lead"><i class="bi bi-telephone"></i></div>
-						<div>
-							<p class="heading-color fw-semibold mb-0">Call me:</p>
-							<ul class="list-group list-group-borderless mb-0">
-								<li class="list-group-item pb-0"> <a href="#" class="text-primary-hover">+(39) 347-275-4488</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="d-flex gap-2 mb-4">
-						<div class="heading-color lead"><i class="bi bi-envelope"></i></div>
-						<div>
-							<p class="heading-color fw-semibold mb-0">E-mail:</p>
-							<ul class="list-group list-group-borderless mb-0">
-								<li class="list-group-item pb-0"> <a href="mailto:ramshamukhtar96@gmail.com" class="text-primary-hover">ramshamukhtar96@gmail.com</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-</main>
+    <!-- prograss
+            ============================================== -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- End prograss -->
 
 
-<footer class="bg-pink--- pt-6 pt-md-8 position-relative" data-bs-theme="dark" style="background-color: #fff;">
-	<div class="container">
-		<div class="row g-4 justify-content-between">
-			<div class="col-lg-4">
-				<a href="index.html">
-					<img class="h-60px" src="assets/images/1.png" alt="logo">
-				</a>
+    <!-- side-menu-mobile -->
+    <div class="side-menu-mobile">
+        <div class="tf-container h-100">
+            <div class="menu-content h-100">
+                <div class="menu-body">
+                    <ul class="nav-menu-list text-center">
+                        <li><a href="#about" class="menu-link link nav_link hover-line-text">About us</a></li>
+                        <li><a href="#service" class="menu-link link nav_link hover-line-text">Our Services</a></li>
+                        <li><a href="#work" class="menu-link link nav_link hover-line-text">Latest Work</a></li>
+                        <li><a href="#testimonial" class="menu-link link nav_link hover-line-text">Client Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu-footer d-flex justify-content-between ">
+                    <div class="menu-bot_left flex-wrap">
+                        <a class="h6 text-white link" href="mailto:ramshamukhtar96@gmail.com">ramshamukhtar96@gmail.com</a>
+                        <span class="br-dot"></span>
+                        <a class="h6 text-white link" href="tel:+393472754488">(+39) 3472754488</a>
+                    </div>
+                    <div class="menu-bot_right">
+                        <ul class="tf-social-icon">
+                            <li><a href="#" class="social-dribbble"><i class="icon icon-Dribbble"></i></a></li>
+                            <li><a href="#" class="social-behance"><i class="icon icon-Behance"></i></a></li>
+                            <li><a href="#" class="social-instagram"><i class="icon icon-Instagram"></i></a></li>
+                            <li><a href="#" class="social-facebook"><i class="icon icon-FaceBook"></i></a></li>
+                            <li><a href="#" class="social-x"><i class="icon icon-X"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /side-menu-mobile  -->
 
-				<p class="my-3 my-lg-4">
-                    A detail-oriented Software QA Engineer with Agile experience, test planning, bug reporting, and cross-team collaboration. I also bring 3+ years in HR coordination, blending people skills with technical accuracy to support impactful teams and products.
-                </p>
-		
-			</div>
-	
-		</div>
-
-		<hr class="mt-xl-5 mb-0 opacity-1">
-
-		<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
-			<div class="text-body small mb-3 mb-md-0"> Copyrights ©2024 Folio. Build by <a href="https://www.webestica.com/" target="_blank" class="text-body text-primary-hover hover-underline-animation">Webestica</a>. </div>
-		</div>
-	</div>
-</footer>
-
-<div class="back-top"></div>
-
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-<!--Vendors-->
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
-<script src="assets/vendor/sticky-js/sticky.min.js"></script>
-
-<script src="assets/js/functions.js"></script>
+    <!-- Javascript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/infinityslide.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/SplitText.min.js"></script>
+    <script src="js/gsapAnimate.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/ukiyo.min.js"></script>
+    <script src="js/ScrollSmooth.js"></script>
+    <script src="js/main.js"></script>
+    <!-- /Javascript -->
 
 </body>
+
 </html>

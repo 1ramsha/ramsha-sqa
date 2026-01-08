@@ -25,6 +25,12 @@
     <link rel="stylesheet" type="text/css" href="css/odometer.min.css">
     <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        a[href="#"] {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
 
     <!-- Font -->
     <link rel="stylesheet" href="font/fonts.css">
@@ -49,8 +55,10 @@
         <Header class="header-2 header-fixed">
             <div class="container-2 d-flex justify-content-between">
                 <div class="header-left logo">
-                    <a href="#" class="text-white">
-                        <img src="images/logo/logo-2.png" alt="">
+                    <a href="#" class="text-white" style="text-decoration: none;">
+                        <div style="font-weight: bold; line-height: 1.2; font-size: 20px;">
+                            Ramsha<br>Mukhtar
+                        </div>
                     </a>
                 </div>
                 <div class="header-right d-flex gap_8">
@@ -293,14 +301,13 @@
                                 </div>
                                 <div class="btn_wrapper">
                                     <a href="#" class="tf-btn-2 btn-item btn-hover">
-                                        <span class="h5">View
-                                            SERVICES</span>
+                                        <span class="h5">SQA</span>
                                         <i class="icon-ArrowUpRight"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="box-right">
-                                <div class="number">SQA</div>
+                                <div class="number">01</div>
                                 <div class="img-style scale-img">
                                     <img loading="lazy" decoding="async" src="images/section/service-1.jpg" width="448"
                                         height="490" alt="service">
@@ -690,8 +697,15 @@
             <div class="footer-bottom">
                 <div class="tf-container">
                     <div class="mb_30 wow animate__animated animate__fadeInUp" data-wow-duration="2s"
-                        data-wow-delay="0s">
-                        <img src="images/section/footer.png" alt="footer">
+                        data-wow-delay="0s" style="text-align: center;">
+                        <div style="display: inline-block; position: relative;">
+                            <div style="background-color: #FFD700; color: #000; padding: 12px 28px; border-radius: 30px; font-weight: bold; font-size: 18px; display: inline-block; margin-bottom: 20px; transform: rotate(-5deg); box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                                AVAILABLE FOR WORK
+                            </div>
+                        </div>
+                        <h1 style="font-weight: bold; font-size: clamp(3rem, 10vw, 12rem); margin: 0; color: white; width: 100%; line-height: 1.1;">
+                            Ramsha Mukhtar
+                        </h1>
                     </div>
                     <div class="bot d-flex justify-content-between align-items-center">
                         <p class="font2 text_white wow animate__animated animate__fadeInUp" data-wow-duration="2s"
